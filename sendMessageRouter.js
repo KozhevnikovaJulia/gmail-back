@@ -1,7 +1,9 @@
 const nodemailer = require('nodemailer');
-var express = require('express');
+const express = require('express');
 const { query } = require('express');
-var router = express.Router();
+const router = express.Router();
+const login = process.env.LOGIN || '';
+const password = process.env.PASSWORD || '';
 
 router.use(function timeLog(req, res, next) {
   console.log('Time: ', Date.now());
@@ -13,8 +15,8 @@ router.use(function timeLog(req, res, next) {
   port: 465,
   secure: true,
   auth: {
-    user: 'kozhevnikova150188@gmail.com', // generated ethereal user
-    pass: '22603092', // generated ethereal password
+    user: login, // generated ethereal user
+    pass: password, // generated ethereal password
   },
 });
 
