@@ -19,6 +19,9 @@ router.use(function timeLog(req, res, next) {
     pass: password, // generated ethereal password
   },
 });
+router.get('/', async (req, res) => {  
+  res.send('sendMessage');
+});
 
 router.post('/', async (req, res) => {  
   let { email, name, message } = req.body
