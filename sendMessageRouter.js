@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 const express = require('express');
 const { query } = require('express');
 const router = express.Router();
-const cors = require('cors');
+const cors = require('cors'); 
 const login = process.env.LOGIN || '---';
 const password = process.env.PASSWORD || '----';
 
@@ -20,11 +20,11 @@ router.use(function timeLog(req, res, next) {
     pass: password, // generated ethereal password
   },
 });
-router.get('/sendMessage',cors(),  async (req, res) => {  
+router.get('/', cors(),  async (req, res) => {  
   res.send('sendMessage');
 });
 
-router.post('/sendMessage', cors(),  async (req, res) => {  
+router.post('/', cors(),  async (req, res) => {  
   let { email, name, message } = req.body
   let info = await transporter.sendMail({
   from: 'Portfolio Page', // sender address
