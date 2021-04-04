@@ -19,11 +19,11 @@ router.use(function timeLog(req, res, next) {
     pass: password, // generated ethereal password
   },
 });
-router.get('/', async (req, res) => {  
+router.get('/sendMessage', async (req, res) => {  
   res.send('sendMessage');
 });
 
-router.post('/', async (req, res) => {  
+router.post('/sendMessage', async (req, res) => {  
   let { email, name, message } = req.body
   let info = await transporter.sendMail({
   from: 'Portfolio Page', // sender address
