@@ -5,8 +5,9 @@ const sendMessageRouter = require('./sendMessageRouter');
 const formRouter = require('./formRouter');
 const cors = require('cors');
 const corsOptions = {
-  origin: '*'
+  origin: 'https://gmail-server.herokuapp.com/'
 }
+
 const bodyParser = require('body-parser');
 
 app.use(cors(corsOptions))
